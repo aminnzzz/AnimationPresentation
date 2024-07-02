@@ -19,7 +19,7 @@ struct Typewriter: View, Animatable {
     }
     // implement the animatable data
     var animatableData: Double {
-        return count
+        return 0.0
     }
 
     var body: some View {
