@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 //        RenderTree()
-//        AnimationVSTransition()
+        AnimationVSTransition()
 //        ImplicitVSExplicit()
 //        BindingAnimation()
 //        CustomAnimationCurves()
@@ -19,7 +19,7 @@ struct ContentView: View {
 //        AnimatableProtocolDemo()
 //        ShakeDemo()
 //        MotionAnimation()
-        MovableTextSnakeStyle()
+//        MovableTextSnakeStyle()
 
     }
 }

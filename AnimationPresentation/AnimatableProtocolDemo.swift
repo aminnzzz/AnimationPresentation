@@ -35,8 +35,8 @@ struct AnimatableProtocolDemo: View {
     var body: some View {
         Button("Animate") { flag.toggle() }
             .opacity(flag ? 1 : 0.3)
-            .animation(.linear(duration: 1), value: flag)
             //.modifier(MyOpacity(flag ? 1 : 0.3))
+            .animation(.linear(duration: 1), value: flag)
     }
 }
 

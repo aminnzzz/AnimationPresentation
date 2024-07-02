@@ -14,6 +14,9 @@ import SwiftUI
 struct RenderTree: View {
     @State private var flag = false
 
+    /*
+     view builder is responsible for hiding this big type from us
+     */
     var body: some View {
 
         // ModifiedContent<ModifiedContent<Rectangle, _FrameLayout>, AddGestureModifier<_EndedGesture<TapGesture>>>
@@ -25,16 +28,15 @@ struct RenderTree: View {
          that can be animated, will be animated, and width is one of them
          */
 
-        let x = Rectangle()
+        Rectangle()
             .frame(width: flag ? 100 : 50, height: 50)
             .onTapGesture {
                 withAnimation(.linear) {
                     flag.toggle()
                 }
-                print(type(of: x))
+                print(type(of: self.body))
             }
 
-        return x
     }
 }
 

@@ -19,17 +19,37 @@ struct ImplicitVSExplicit: View {
  type of v is:
  ModifiedContent<
     ModifiedContent<
-        ModifiedContent<
+        MonodifiedContent<
             Rectangle, _FrameLayout
         >,
-        _AnimationModifier<Bool>>,
-    AddGestureModifier<_EndedGesture<TapGesture>>
+    _AnimatiModifier<Bool>>,
+AddGestureModifier<_EndedGesture<TapGesture>>
  >
  */
 
     var body: some View {
+
         /*
-         order matters, but in this instance whether frame is above or below, it won't make a difference
+
+┌────────────────┐
+│      tap       │
+└────────────────┘
+│
+▼
+┌────────────────┐
+│   animation    │
+└────────────────┘  order matters, but in this instance whether frame is above or                   below, it won't make a difference
+│
+▼
+┌────────────────┐
+│     frame      │
+└────────────────┘
+│
+▼
+┌────────────────┐
+│   rectangle    │
+└────────────────┘
+
          */
         let v = Rectangle()
             .frame(width: flag ? 100 : 50, height: 50)
@@ -47,11 +67,14 @@ struct ImplicitVSExplicit: View {
                 $0.rotationEffect(flag ? .zero : .degrees(90))
             }
 
-        // Exercise 1 : without using animations() {} like above, only animate the rotation
+        // Exercise : 
+        // Let's add two modifiers to the rectangle, opacity and rotation effect
+        // without using scoping like above, only animate the rotation
         // by using the correct order, remember, render tree is from bottom to the top
 
-        // go to exercise 2 now
-
+        let x = Text("Exercise")
+            .opacity(flag ? 1 : 0)
+            .rotationEffect(flag ? .zero : .degrees(90))
 
         /*
          we said order matters, but here frame changes, why?
@@ -68,7 +91,6 @@ struct ImplicitVSExplicit: View {
             v
             t
             f
-            //exercise
         }
 
 

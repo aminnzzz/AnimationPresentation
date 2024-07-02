@@ -15,7 +15,7 @@ import SwiftUI
  */
 
     /*
-     Excersice:
+     Excercise:
 
 
      how do we trick SwiftUI to think they are the same? Or not the same?
@@ -59,15 +59,14 @@ struct AnimationVSTransition: View {
 
         if flag {
             rect
-                .id(1)
                 .transition(.opacity)
                 .frame(width: 200, height: 100)
         } else {
             rect
-                .id(2)
                 .transition(.opacity)
                 .frame(width: 100, height: 100)
         }
+
         /*
          not that when views insert or remove from subtree, it is a transition
          */

@@ -12,7 +12,7 @@ struct MovableTextSnakeStyle: View {
     @State private var isEnabled = false
     @State private var started = false
     @State private var viewSize = CGSize.zero
-    let letters = Array("WELCOME")
+    let letters = Array("Swift Con")
     var body: some View {
         VStack {
             HStack(spacing: .zero) {
